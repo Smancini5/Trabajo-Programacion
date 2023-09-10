@@ -8,7 +8,6 @@ a{
     font-weight: 600;
 }
 .container {
-    height: 700px;
     width: 100%;
     background-color: black;
     display: flex;
@@ -53,4 +52,35 @@ a{
 .nombre{
     color: white;
     font-weight: 600;
+}
+.secciones-container{
+    margin: 20px 0px 20px 0px;
+    background-color: beige;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.seccion-inicio{
+    width: 100%;
+
+}
+.fila-peliculas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.pelicula-inicio{
+    width: 30%;
+    background-color: beige;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-pelicula-inicio{
+    height: 650px;
 }
