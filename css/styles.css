@@ -5,6 +5,7 @@ body {
 a{
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }
 .container {
     height: 700px;
@@ -38,4 +39,18 @@ a{
 }
 .seccion{
     padding: 5px;
+}
+.footer{
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nombre{
+    color: white;
+    font-weight: 600;
 }
