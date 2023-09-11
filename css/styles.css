@@ -109,3 +109,11 @@ a{
     padding: 0px 15px 0px 15px;
     color: white;
 }
+
+.favoritos{
+    color: white;
+}
+
+.favoritos-subtitulos{
+    align-self: flex-start;
+}
