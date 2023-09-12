@@ -117,3 +117,36 @@ a{
 .favoritos-subtitulos{
     align-self: flex-start;
 }
+.generos{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+.genero{
+    width: 30%;
+    background-color: white;
+    margin: 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genero-subtitulo{
+    align-self: flex-start;
+    margin-left:15px;
+}
+.subtitulo-peli{
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.genero-link{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
