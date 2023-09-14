@@ -14,12 +14,12 @@
         <header class="header">
 
             <a href="../index.html">
-                <img class="logo" src="../img/logo.png" alt="logo">
+                <img class="logo" src="../img/logo.avif" alt="logo">
             </a>
 
-            <form action="./busqueda.html">
-                <input type="text" name="Buscar" placeholder="Buscar">
-                <button type="submit">Buscar</button>
+            <form class="formulario" action="./busqueda.html">
+                <input type="text" name="Buscar" placeholder="Buscar" class="form-input">
+                <button type="submit" class="btn-submit">OK</button>
             </form>
 
             <nav>
@@ -35,10 +35,10 @@
                         <li class="seccion">Series mas valoradas</li>
                     </a>
                     <a href="./favoritos.html">
-                        <li>Favoritos</li>
+                        <li class="seccion activa">Favoritos</li>
                     </a>
                     <a href="./generos.html">
-                        <li>Generos</li>
+                        <li class="seccion">Generos</li>
                     </a>
 
 
@@ -47,65 +47,72 @@
 
         </header>
 
-        <h1>Favoritos</h1>
+        <div class="banner">
+            <img src="../img/logo.avif" alt="banner" class="primer-logo">
+            <h1>FAVORITOS</h1>
+            <img src="../img/logo.avif" alt="banner">
+        </div>
 
-        <h2 class="favoritos-subtitulos">Peliculas</h2>
+        <div class="mid-container">
+            <h2 class="favoritos-subtitulos">Peliculas</h2>
 
-        <div class="fila-peliculas">
+            <div class="fila-peliculas">
 
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-movie.html">
-                    <img class="img-pelicula-inicio" src="../img/oppenheimer.avif" alt="lobo">
-                </a>
-                <p>Oppenheimer</p>
-                <p>Fecha de estreno: 02/07/2023</p>
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-movie.html">
+                        <img class="img-pelicula-inicio" src="../img/oppenheimer.avif" alt="lobo">
+                    </a>
+                    <p>Oppenheimer</p>
+                    <p>Fecha de estreno: 02/07/2023</p>
+                </div>
+
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-movie.html">
+                        <img class="img-pelicula-inicio" src="../img/interstellar.jpeg" alt="interstellar">
+                    </a>
+                    <p>Interstellar</p>
+                    <p>Fecha de estreno: 06/11/2014</p>
+                </div>
+
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-movie.html">
+                        <img class="img-pelicula-inicio" src="../img/elorigen.jpeg" alt="origen">
+                    </a>
+                    <p>El origen</p>
+                    <p>Fecha de estreno: 26/07/2010</p>
+                </div>
             </div>
 
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-movie.html">
-                    <img class="img-pelicula-inicio" src="../img/interstellar.jpeg" alt="interstellar">
-                </a>
-                <p>Interstellar</p>
-                <p>Fecha de estreno: 06/11/2014</p>
-            </div>
+            <h2 class="favoritos-subtitulos">Series</h2>
 
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-movie.html">
-                    <img class="img-pelicula-inicio" src="../img/elorigen.jpeg" alt="origen">
-                </a>
-                <p>El origen</p>
-                <p>Fecha de estreno: 26/07/2010</p>
+            <div class="fila-peliculas">
+
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-seriepopular.html">
+                        <img class="img-pelicula-inicio" src="../img/breakingbad.jpg" alt="bbad">
+                    </a>
+                    <p>Breaking Bad</p>
+                    <p>Fecha de estreno: 20/01/2008</p>
+                </div>
+
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-seriepopular.html">
+                        <img class="img-pelicula-inicio" src="../img/strangerthings.jpeg" alt="strangerth">
+                    </a>
+                    <p>Stranger Things</p>
+                    <p>Fecha de estreno: 15/07/2016</p>
+                </div>
+
+                <div class="pelicula-inicio">
+                    <a href="../secciones/detail-seriepopular.html">
+                        <img class="img-pelicula-inicio" src="../img/got.jpg" alt="got">
+                    </a>
+                    <p>Game of Thrones</p>
+                    <p>Fecha de estreno: 17/04/2011</p>
+                </div>
             </div>
         </div>
 
-        <h2 class="favoritos-subtitulos">Series</h2>
-
-        <div class="fila-peliculas">
-
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-seriepopular.html">
-                    <img class="img-pelicula-inicio" src="../img/breakingbad.jpg" alt="bbad">
-                </a>
-                <p>Breaking Bad</p>
-                <p>Fecha de estreno: 20/01/2008</p>
-            </div>
-
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-seriepopular.html">
-                    <img class="img-pelicula-inicio" src="../img/strangerthings.jpeg" alt="strangerth">
-                </a>
-                <p>Stranger Things</p>
-                <p>Fecha de estreno: 15/07/2016</p>
-            </div>
-
-            <div class="pelicula-inicio">
-                <a href="../secciones/detail-seriepopular.html">
-                    <img class="img-pelicula-inicio" src="../img/got.jpg" alt="got">
-                </a>
-                <p>Game of Thrones</p>
-                <p>Fecha de estreno: 17/04/2011</p>
-            </div>
-        </div>
 
         <footer class="footer">
             <p class="nombre">Santos Mancini</p>
