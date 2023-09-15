@@ -260,6 +260,17 @@ h2{
     padding: 5px;
     font-size: 16px;
 }
+.boton-favoritos{
+    width: 200px;
+    height: 70px;
+    border: solid 1px gold;
+    font-size: 16px;
+    background-color: black;
+    text-decoration: underline;
+    font-family: 'Outfit', sans-serif;
+    color: gold;
+    margin-top: 15px;
+   }
 
 @media(max-width: 390px){
     .header{
