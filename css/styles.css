@@ -266,10 +266,14 @@ h2{
     border: solid 1px gold;
     font-size: 16px;
     background-color: black;
-    text-decoration: underline;
     font-family: 'Outfit', sans-serif;
     color: gold;
     margin-top: 15px;
+   }
+   .boton-favoritos:hover{
+    border: solid 1px white;
+    color: white;
+    cursor: pointer;
    }
 
 @media(max-width: 390px){
