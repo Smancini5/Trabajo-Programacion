@@ -120,7 +120,6 @@ h2{
 }
 .seccion-inicio{
     width: 100%;
-
 }
 
 #peliculas{
@@ -133,6 +132,7 @@ h2{
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 .pelicula-inicio{
     width: 30%;
@@ -143,6 +143,7 @@ h2{
     align-items: center;
     border: solid 1px gray;
     background-color: black;
+    margin-bottom: 20px;
 }
 
 .pelicula-inicio:hover{
