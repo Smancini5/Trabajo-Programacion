@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let id_serie = qsObj.get("idSerie");
 
     let urlSeriePopular = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${apiKey}`
-    // let urlTrailerPelicula = `https://api.themoviedb.org/3/movie/${id_movie}/videos?api_key=${acaVaLaAPIKey}`
 
     let infoContainer = document.querySelector('.detail-info')
     let imgContainer = document.querySelector('.detail-img')
@@ -26,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 genres += `<p>${el.name}</p>`
             }
 
-            let detalles = `<h1>${data.name}</h1>
+            let detalles = `<h1 id="${data.id}" class="serie-name">${data.name}</h1>
                             <p>Calificacion: ${data.vote_average}</p>
-                            <p>Fecha de estreno: ${data.release_date}</p>
+                            <p id="fecha${data.id}">Fecha de estreno: ${data.first_air_date}</p>
                             <p>Duracion: ${data.runtime} minutos</p>
                             <h4>Sinopsis</h4>
                             <p>${data.overview}</p>
@@ -39,9 +38,73 @@ document.addEventListener('DOMContentLoaded', function () {
 
             infoContainer.innerHTML = detalles;
 
-            // console.log(imagenPelicula);
             console.log(imgContainer);
             imgContainer.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+
+            botonFav = document.querySelector('.boton-favoritos');
+            botonFav.addEventListener('click', function () {
+                console.log(document.querySelector('.serie-name'));
+                let serieName = document.querySelector('.serie-name').innerHTML;
+                let serieId = document.querySelector('.serie-name').id;
+                console.log(serieId);
+                let serieDate = document.querySelector(`#fecha${serieId}`).innerHTML;
+                console.log(serieDate);
+                let serieImg = imgContainer.src;
+                console.log("source: ", serieImg);
+                let datosAlmacenadosJSON = localStorage.getItem('seriesFav');
+                let datosAlmacenados;
+                if (datosAlmacenadosJSON) {
+                    console.log('Hay datos en localStorage:', datosAlmacenadosJSON);
+                    datosAlmacenados = JSON.parse(datosAlmacenadosJSON)
+                } else {
+                    console.log('No hay datos en localStorage.');
+                }
+                let data;
+                console.log("esta data se recibio: ", datosAlmacenados);
+                if (datosAlmacenados) {
+                    let veredict = datosAlmacenados.series.some(el => el.serie.nombre === serieName)
+                    console.log("veredict", veredict);
+                    if (!veredict) {
+                        data = {
+                            series: [
+                                ...datosAlmacenados.series,
+                                {
+                                    serie: {
+                                        nombre: serieName,
+                                        id: serieId,
+                                        fecha: serieDate,
+                                        img: serieImg
+                                    }
+                                }
+                            ]
+                        }
+                        console.log("hay data, no existe esta serie: ", data);
+                    } else {
+                        data = datosAlmacenados;
+                        console.log("hay data, si existe esta serie: ", data);
+                    }
+                } else {
+                    data = {
+                        series: [
+                            {
+                                serie: {
+                                    nombre: serieName,
+                                    id: serieId,
+                                    fecha: serieDate,
+                                    img: serieImg
+                                }
+                            }
+                        ]
+                    }
+                    console.log("no hay data, agrego esta serie: ", data);
+                }
+
+                let datosJSON = JSON.stringify(data)
+                console.log(datosJSON);
+                localStorage.setItem('seriesFav', datosJSON)
+
+            })
+
         })
 
 })

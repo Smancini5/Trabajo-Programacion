@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let infoContainer = document.querySelector('.detail-info')
     let imgContainer = document.querySelector('.detail-img')
+    let botonFav;
 
     fetch(urlDetailMovie)
         .then(function (response) {
@@ -23,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 genres += `<p>${el.name}</p>`
             }
 
-            let detalles = `<h1>${data.title}</h1>
+            let detalles = `<h1 id="${data.id}" class="movie-name">${data.title}</h1>
                             <p>Calificacion: ${data.vote_average}</p>
-                            <p>Fecha de estreno: ${data.release_date}</p>
+                            <p id="fecha${data.id}">Fecha de estreno: ${data.release_date}</p>
                             <p>Duracion: ${data.runtime} minutos</p>
                             <h4>Sinopsis</h4>
                             <p>${data.overview}</p>
@@ -37,6 +38,68 @@ document.addEventListener('DOMContentLoaded', function () {
             infoContainer.innerHTML = detalles;
 
             imgContainer.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+            botonFav = document.querySelector('.boton-favoritos');
+            botonFav.addEventListener('click', function () {
+                let movieName = document.querySelector('.movie-name').innerHTML;
+                let movieId = document.querySelector('.movie-name').id;
+                console.log(movieId);
+                let movieDate = document.querySelector(`#fecha${movieId}`).innerHTML;
+                let movieImg = imgContainer.src;
+                console.log("source: ", movieImg);
+                let datosAlmacenadosJSON = localStorage.getItem('peliculasFav');
+                let datosAlmacenados;
+                if (datosAlmacenadosJSON) {
+                    console.log('Hay datos en localStorage:', datosAlmacenadosJSON);
+                    datosAlmacenados = JSON.parse(datosAlmacenadosJSON)
+                } else {
+                    console.log('No hay datos en localStorage.');
+                }
+                let data;
+                console.log("esta data se recibio: ", datosAlmacenados);
+                if (datosAlmacenados) {
+                    let veredict = datosAlmacenados.peliculas.some(el => el.pelicula.nombre === movieName)
+                    console.log("veredict", veredict);
+                    if (!veredict) {
+                        data = {
+                            peliculas: [
+                                ...datosAlmacenados.peliculas,
+                                {
+                                    pelicula: {
+                                        nombre: movieName,
+                                        id: movieId,
+                                        fecha: movieDate,
+                                        img: movieImg
+                                    }
+                                }
+                            ]
+                        }
+                        console.log("hay data, no existe esta pelicula: ", data);
+                    } else {
+                        data = datosAlmacenados;
+                        console.log("hay data, si existe esta pelicula: ", data);
+                    }
+                } else {
+                    data = {
+                        peliculas: [
+                            {
+                                pelicula: {
+                                    nombre: movieName,
+                                    id: movieId,
+                                    fecha: movieDate,
+                                    img: movieImg
+                                }
+                            }
+                        ]
+                    }
+                    console.log("no hay data, agrego esta pelicula: ", data);
+                }
+
+                let datosJSON = JSON.stringify(data)
+                console.log(datosJSON);
+                localStorage.setItem('peliculasFav', datosJSON)
+
+            })
         })
+
 
 })
