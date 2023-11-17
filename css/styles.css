@@ -113,7 +113,7 @@ h3{
     text-align: center;
     background-color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 50px;
     border-top: solid 1px rgb(201, 184, 100);
@@ -347,4 +347,10 @@ h3{
     .primer-logo{
         display: none;
     }
+}
+.logotmdb{
+   
+    height: 50px;
+   
+
 }
