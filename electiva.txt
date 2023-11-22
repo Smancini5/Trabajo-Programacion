@@ -1,0 +1,11 @@
+Estos son las funcionalidades que elegi:
+
+1- La posibilidad de agregar películas o series a “favoritos”. Cada equipo decidirá si agregar series, películas, o ambas.
+   Si el contenido ya se encuentra seleccionado como favorito el usuario deben tener la posibilidad de quitarlo de favoritos.
+   La información de los favoritos seleccionados debe guardarse en localstorage.
+   El dato a guardar debe ser el id de la película, de la serie o ambos si así lo eligieron.
+
+2- Ver favoritos: La página mostrará la lista de películas o de series seleccionadas como favoritas.
+   En la página de favoritos cada contenido debe mostrar su póster o imagen y su título o nombre.
+   Al clickear en cualquiera de las series/ películas favoritas debe redirigir al detalle.
+   La información de los favoritos debe obtenerse de localstorage. El dato a obtener es el id de la película o de la serie. 
